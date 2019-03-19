@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
 		String password=request.getParameter("password");	
 		//根据账户名和密码判断是否登录成功
 		if(new AdminDao().login(username, password)){
+
 			resp.sendRedirect(basePath+"jsp/backstage/main.html");
 		}else{
 			resp.sendRedirect(basePath+"/jsp/backstage/login.jsp");
